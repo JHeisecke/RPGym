@@ -9,15 +9,20 @@ import SwiftUI
 
 @MainActor
 class ExercisesManager: ObservableObject {
-    private let service: ExerciseService
+    private let service: FileReaderService
+    private(set) var exercises: Exercises = []
 
-    init(service: ExerciseService) {
+    init(service: FileReaderService) {
         self.service = service
     }
 
     // MARK: - Services
 
+    @discardableResult
     func fetchExercises() async throws -> Exercises {
-        try await service.fetchExercises()
+        guard exercises.isEmpty else { return exercises }
+        let result: Exercises = try await service.read(from: File.exercises)
+        exercises = result
+        return exercises
     }
 }

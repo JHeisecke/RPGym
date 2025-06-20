@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+class Navigation: ObservableObject {
+    @Published var path: [NavigationPathOption] = []
+}
+
 enum NavigationPathOption: Hashable {
     case profile
     case settings
     case fitnessPlan
     case routines
+    case exercise(exercise: Exercise)
 }
 
 extension View {
@@ -27,6 +32,8 @@ extension View {
                     ProfileView()
                 case .settings:
                     SettingsView()
+                case .exercise(let exercise):
+                    ExerciseDetailView(exercise: exercise)
                 }
             }
     }

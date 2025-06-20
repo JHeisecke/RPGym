@@ -64,3 +64,5 @@ fastlane/test_output
 .DS_Store
 
 RPGym/RPGym.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+RPGym/RPGym/Core/GoogleServicePLists/GoogleService-Info.plist

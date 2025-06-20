@@ -11,43 +11,42 @@
 		0021464C2E039E590004B7E3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0021464B2E039E590004B7E3 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		00710EB62E05D5F000D90A53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00A576F82DCD746B00093C14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00A576FF2DCD746B00093C14;
+			remoteInfo = RPGym;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		00710EB22E05D5F000D90A53 /* RPGymTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPGymTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A577002DCD746B00093C14 /* RPGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0053DA612E04DBBC006865CC /* Exceptions for "RPGym" folder in "RPGym" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"App/Features/Routines/Presentation/EnvironmentValues/EnvironmentValues+Extensions.swift",
-			);
-			target = 00A576FF2DCD746B00093C14 /* RPGym */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		0053DA622E04DBBC006865CC /* Exceptions for "RPGym" folder in "Copy Bundle Resources" phase from "RPGym" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 00A576FE2DCD746B00093C14 /* Resources */;
-			membershipExceptions = (
-				"App/Features/Routines/Presentation/EnvironmentValues/EnvironmentValues+Extensions.swift",
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		00710EB32E05D5F000D90A53 /* RPGymTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RPGymTests;
+			sourceTree = "<group>";
+		};
 		00A577022DCD746B00093C14 /* RPGym */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0053DA612E04DBBC006865CC /* Exceptions for "RPGym" folder in "RPGym" target */,
-				0053DA622E04DBBC006865CC /* Exceptions for "RPGym" folder in "Copy Bundle Resources" phase from "RPGym" target */,
-			);
 			path = RPGym;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00710EAF2E05D5F000D90A53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00A576FD2DCD746B00093C14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				00A577022DCD746B00093C14 /* RPGym */,
+				00710EB32E05D5F000D90A53 /* RPGymTests */,
 				00A577012DCD746B00093C14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				00A577002DCD746B00093C14 /* RPGym.app */,
+				00710EB22E05D5F000D90A53 /* RPGymTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +80,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		00710EB12E05D5F000D90A53 /* RPGymTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00710EB82E05D5F000D90A53 /* Build configuration list for PBXNativeTarget "RPGymTests" */;
+			buildPhases = (
+				00710EAE2E05D5F000D90A53 /* Sources */,
+				00710EAF2E05D5F000D90A53 /* Frameworks */,
+				00710EB02E05D5F000D90A53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00710EB72E05D5F000D90A53 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				00710EB32E05D5F000D90A53 /* RPGymTests */,
+			);
+			name = RPGymTests;
+			packageProductDependencies = (
+			);
+			productName = RPGymTests;
+			productReference = 00710EB22E05D5F000D90A53 /* RPGymTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		00A576FF2DCD746B00093C14 /* RPGym */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00A5770E2DCD746C00093C14 /* Build configuration list for PBXNativeTarget "RPGym" */;
@@ -113,6 +137,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					00710EB12E05D5F000D90A53 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 00A576FF2DCD746B00093C14;
+					};
 					00A576FF2DCD746B00093C14 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -136,11 +164,19 @@
 			projectRoot = "";
 			targets = (
 				00A576FF2DCD746B00093C14 /* RPGym */,
+				00710EB12E05D5F000D90A53 /* RPGymTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		00710EB02E05D5F000D90A53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00A576FE2DCD746B00093C14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +187,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00710EAE2E05D5F000D90A53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00A576FC2DCD746B00093C14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,7 +203,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		00710EB72E05D5F000D90A53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00A576FF2DCD746B00093C14 /* RPGym */;
+			targetProxy = 00710EB62E05D5F000D90A53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		00710EB92E05D5F000D90A53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UK87X7N6A9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jheisecke.rpgym.RPGymTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPGym.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RPGym";
+			};
+			name = Debug;
+		};
+		00710EBA2E05D5F000D90A53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UK87X7N6A9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jheisecke.rpgym.RPGymTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPGym.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RPGym";
+			};
+			name = Release;
+		};
 		00A5770C2DCD746C00093C14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -343,6 +430,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00710EB82E05D5F000D90A53 /* Build configuration list for PBXNativeTarget "RPGymTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00710EB92E05D5F000D90A53 /* Debug */,
+				00710EBA2E05D5F000D90A53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00A576FB2DCD746B00093C14 /* Build configuration list for PBXProject "RPGym" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

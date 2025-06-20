@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "gym_wallpaper_pixel.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct RPGymApp: App {
@@ -15,7 +16,9 @@ struct RPGymApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .preferredColorScheme(.light)
                 .environmentObject(delegate.dependencies.exercisesManager)
+                .environmentObject(delegate.dependencies.musclesManager)
         }
     }
 }
@@ -44,10 +47,10 @@ enum BuildConfiguration {
         switch self {
         case .mock:
             return
-        case .dev:
-            let plist = Bundle.main.path(forResource: "GoogleService-Info-Dev", ofType: "plist")!
-        case .prod:
-            let plist = Bundle.main.path(forResource: "GoogleService-Info-Prod", ofType: "plist")!
+        default:
+            let plist = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!
+            let options = FirebaseOptions(contentsOfFile: plist)!
+            FirebaseApp.configure(options: options)
         }
     }
 }
@@ -57,16 +60,14 @@ enum BuildConfiguration {
 @MainActor
 struct Dependencies {
     let exercisesManager: ExercisesManager!
+    let musclesManager: MusclesManager!
 
     init(config: BuildConfiguration) {
 
         switch config {
-        case .mock:
-            self.exercisesManager = ExercisesManager(service: ExerciseServiceImpl())
-        case .dev:
-            self.exercisesManager = ExercisesManager(service: ExerciseServiceImpl())
-        case .prod:
-            self.exercisesManager = ExercisesManager(service: ExerciseServiceImpl())
+        default:
+            self.exercisesManager = ExercisesManager(service: FileReaderServiceImpl())
+            self.musclesManager = MusclesManager(service: FileReaderServiceImpl())
         }
     }
 }
@@ -76,6 +77,7 @@ struct Dependencies {
 extension View {
     func previewEnvironment() -> some View {
         self
-            .environmentObject(ExercisesManager(service: ExerciseServiceImpl()))
+            .environmentObject(ExercisesManager(service: FileReaderServiceImpl()))
+            .environmentObject(MusclesManager(service: FileReaderServiceImpl()))
     }
 }

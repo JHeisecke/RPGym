@@ -1,0 +1,205 @@
+[
+    {
+        "id": "pectoralis-major",
+        "name": "Pectoralis Major",
+        "common_name": "Pecs / Chest",
+        "group": "chest",
+        "image_url": "gs://your-bucket/images/muscles/pectoralis_major.png"
+    },
+    {
+        "id": "anterior-deltoid",
+        "name": "Anterior Deltoid",
+        "common_name": "Front Delt / Shoulder",
+        "group": "shoulders",
+        "image_url": "gs://your-bucket/images/muscles/anterior_deltoid.png"
+    },
+    {
+        "id": "lateral-deltoid",
+        "name": "Lateral Deltoid",
+        "common_name": "Side Delt / Shoulder",
+        "group": "shoulders",
+        "image_url": "gs://your-bucket/images/muscles/lateral_deltoid.png"
+    },
+    {
+        "id": "posterior-deltoid",
+        "name": "Posterior Deltoid",
+        "common_name": "Rear Delt / Shoulder",
+        "group": "shoulders",
+        "image_url": "gs://your-bucket/images/muscles/posterior_deltoid.png"
+    },
+    {
+        "id": "triceps-brachii",
+        "name": "Triceps Brachii",
+        "common_name": "Triceps",
+        "group": "triceps",
+        "image_url": "gs://your-bucket/images/muscles/triceps_brachii.png"
+    },
+    {
+        "id": "biceps-brachii",
+        "name": "Biceps Brachii",
+        "common_name": "Biceps",
+        "group": "biceps",
+        "image_url": "gs://your-bucket/images/muscles/biceps_brachii.png"
+    },
+    {
+        "id": "brachialis",
+        "name": "Brachialis",
+        "common_name": "Brachialis / Deep Bicep",
+        "group": "biceps",
+        "image_url": "gs://your-bucket/images/muscles/brachialis.png"
+    },
+    {
+        "id": "brachioradialis",
+        "name": "Brachioradialis",
+        "common_name": "Brachioradialis / Forearm",
+        "group": "forearms",
+        "image_url": "gs://your-bucket/images/muscles/brachioradialis.png"
+    },
+    {
+        "id": "forearm-flexors",
+        "name": "Forearm Flexors",
+        "common_name": "Forearms (Inner)",
+        "group": "forearms",
+        "image_url": "gs://your-bucket/images/muscles/forearm_flexors.png"
+    },
+    {
+        "id": "forearm-extensors",
+        "name": "Forearm Extensors",
+        "common_name": "Forearms (Outer)",
+        "group": "forearms",
+        "image_url": "gs://your-bucket/images/muscles/forearm_extensors.png"
+    },
+    {
+        "id": "latissimus-dorsi",
+        "name": "Latissimus Dorsi",
+        "common_name": "Lats",
+        "group": "back",
+        "image_url": "gs://your-bucket/images/muscles/latissimus_dorsi.png"
+    },
+    {
+        "id": "trapezius",
+        "name": "Trapezius",
+        "common_name": "Traps",
+        "group": "back",
+        "image_url": "gs://your-bucket/images/muscles/trapezius.png"
+    },
+    {
+        "id": "rhomboids",
+        "name": "Rhomboids",
+        "common_name": "Rhomboids / Mid Back",
+        "group": "back",
+        "image_url": "gs://your-bucket/images/muscles/rhomboids.png"
+    },
+    {
+        "id": "erector-spinae",
+        "name": "Erector Spinae",
+        "common_name": "Spinal Erectors",
+        "group": "back",
+        "image_url": "gs://your-bucket/images/muscles/erector_spinae.png"
+    },
+    {
+        "id": "quadratus-lumborum",
+        "name": "Quadratus Lumborum",
+        "common_name": "QL / Deep Lower Back",
+        "group": "abs_core",
+        "image_url": "gs://your-bucket/images/muscles/quadratus_lumborum.png"
+    },
+    {
+        "id": "rectus-abdominis",
+        "name": "Rectus Abdominis",
+        "common_name": "Abs",
+        "group": "abs_core",
+        "image_url": "gs://your-bucket/images/muscles/rectus_abdominis.png"
+    },
+    {
+        "id": "obliques",
+        "name": "Obliques",
+        "common_name": "Obliques",
+        "group": "abs_core",
+        "image_url": "gs://your-bucket/images/muscles/obliques.png"
+    },
+    {
+        "id": "transverse-abdominis",
+        "name": "Transverse Abdominis",
+        "common_name": "Deep Core / TVA",
+        "group": "abs_core",
+        "image_url": "gs://your-bucket/images/muscles/transverse_abdominis.png"
+    },
+    {
+        "id": "gluteus-maximus",
+        "name": "Gluteus Maximus",
+        "common_name": "Glutes (Maximus)",
+        "group": "glutes",
+        "image_url": "gs://your-bucket/images/muscles/gluteus_maximus.png"
+    },
+    {
+        "id": "gluteus-medius-minimus",
+        "name": "Gluteus Medius/Minimus",
+        "common_name": "Glutes (Med/Min) / Hip Abductors",
+        "group": "glutes",
+        "image_url": "gs://your-bucket/images/muscles/gluteus_medius_minimus.png"
+    },
+    {
+        "id": "quadriceps-femoris",
+        "name": "Quadriceps Femoris",
+        "common_name": "Quads",
+        "group": "quads",
+        "image_url": "gs://your-bucket/images/muscles/quadriceps_femoris.png"
+    },
+    {
+        "id": "hamstrings",
+        "name": "Hamstrings",
+        "common_name": "Hamstrings",
+        "group": "hamstrings",
+        "image_url": "gs://your-bucket/images/muscles/hamstrings.png"
+    },
+    {
+        "id": "adductors",
+        "name": "Adductors",
+        "common_name": "Inner Thigh / Adductors",
+        "group": "legs",
+        "image_url": "gs://your-bucket/images/muscles/adductors.png"
+    },
+    {
+        "id": "gastrocnemius",
+        "name": "Gastrocnemius",
+        "common_name": "Calves (Gastrocnemius)",
+        "group": "calves",
+        "image_url": "gs://your-bucket/images/muscles/gastrocnemius.png"
+    },
+    {
+        "id": "soleus",
+        "name": "Soleus",
+        "common_name": "Calves (Soleus)",
+        "group": "calves",
+        "image_url": "gs://your-bucket/images/muscles/soleus.png"
+    },
+    {
+        "id": "tibialis-anterior",
+        "name": "Tibialis Anterior",
+        "common_name": "Shin Muscle / Tibialis",
+        "group": "calves",
+        "image_url": "gs://your-bucket/images/muscles/tibialis_anterior.png"
+    },
+    {
+        "id": "serratus-anterior",
+        "name": "Serratus Anterior",
+        "common_name": "Serratus / Boxer's Muscle",
+        "group": "chest",
+        "image_url": "gs://your-bucket/images/muscles/serratus_anterior.png"
+    },
+    {
+        "id": "hip-flexors",
+        "name": "Hip Flexors",
+        "common_name": "Hip Flexors (Functional Group)",
+        "group": "legs",
+        "image_url": "gs://your-bucket/images/muscles/hip_flexors.png"
+    },
+    {
+        "id": "rotator-cuff",
+        "name": "Rotator Cuff",
+        "common_name": "Rotator Cuff (Functional Group)",
+        "group": "shoulders",
+        "image_url": "gs://your-bucket/images/muscles/rotator_cuff.png"
+    }
+]

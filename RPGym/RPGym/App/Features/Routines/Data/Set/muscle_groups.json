@@ -1,0 +1,74 @@
+[
+  {
+    "id": "chest",
+    "name": "Chest",
+    "image_url": "gs://your-bucket/images/muscle_groups/chest_group.png",
+    "muscles": ["pectoralis-major", "serratus-anterior"]
+  },
+  {
+    "id": "back",
+    "name": "Back",
+    "image_url": "gs://your-bucket/images/muscle_groups/back_group.png",
+    "muscles": ["latissimus-dorsi", "rhomboids", "trapezius", "erector-spinae"]
+  },
+  {
+    "id": "shoulders",
+    "name": "Shoulders",
+    "image_url": "gs://your-bucket/images/muscle_groups/shoulders_group.png",
+    "muscles": ["anterior-deltoid", "lateral-deltoid", "posterior-deltoid", "rotator-cuff"]
+  },
+  {
+    "id": "legs",
+    "name": "Legs",
+    "image_url": "gs://your-bucket/images/muscle_groups/legs_group.png",
+    "muscles": ["quadriceps-femoris", "hamstrings", "gluteus-maximus", "gluteus-medius-minimus", "adductors", "gastrocnemius", "soleus", "tibialis-anterior", "hip-flexors"]
+  },
+  {
+    "id": "quads",
+    "name": "Quads",
+    "image_url": "gs://your-bucket/images/muscle_groups/quads_group.png",
+    "muscles": ["quadriceps-femoris"]
+  },
+  {
+    "id": "hamstrings",
+    "name": "Hamstrings",
+    "image_url": "gs://your-bucket/images/muscle_groups/hamstrings_group.png",
+    "muscles": ["hamstrings"]
+  },
+  {
+    "id": "glutes",
+    "name": "Glutes",
+    "image_url": "gs://your-bucket/images/muscle_groups/glutes_group.png",
+    "muscles": ["gluteus-maximus", "gluteus-medius-minimus"]
+  },
+  {
+    "id": "calves",
+    "name": "Calves",
+    "image_url": "gs://your-bucket/images/muscle_groups/calves_group.png",
+    "muscles": ["gastrocnemius", "soleus", "tibialis-anterior"]
+  },
+  {
+    "id": "biceps",
+    "name": "Biceps",
+    "image_url": "gs://your-bucket/images/muscle_groups/biceps_group.png",
+    "muscles": ["biceps-brachii", "brachialis"]
+  },
+  {
+    "id": "triceps",
+    "name": "Triceps",
+    "image_url": "gs://your-bucket/images/muscle_groups/triceps_group.png",
+    "muscles": ["triceps-brachii"]
+  },
+  {
+    "id": "forearms",
+    "name": "Forearms",
+    "image_url": "gs://your-bucket/images/muscle_groups/forearms_group.png",
+    "muscles": ["brachioradialis", "forearm-flexors", "forearm-extensors"]
+  },
+  {
+    "id": "abs_core",
+    "name": "Abs & Core",
+    "image_url": "gs://your-bucket/images/muscle_groups/abs_core_group.png",
+    "muscles": ["rectus-abdominis", "obliques", "transverse-abdominis", "quadratus-lumborum"]
+  }
+]

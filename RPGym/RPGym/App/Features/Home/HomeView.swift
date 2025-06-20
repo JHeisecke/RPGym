@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var exercisesManager: ExercisesManager
+    @EnvironmentObject private var musclesManager: MusclesManager
+    @StateObject private var navigation = Navigation()
 
     private let options = MenuOption.allCases
 
     @State private var orientation = UIDeviceOrientation.unknown
-    @State private var path: [NavigationPathOption] = []
 
     var isPortrait: Bool {
         switch orientation {
@@ -23,15 +25,8 @@ struct HomeView: View {
         }
     }
 
-    @Namespace private var namespace
-//    private var columns: [GridItem] {
-//        return [
-//            .init(.adaptive(minimum: Constans.buttonSize, maximum: Constans.buttonSize), spacing: Constans.spacing)
-//        ]
-//    }
-    
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $navigation.path) {
             GeometryReader { geometry in
                 ZStack {
                     Image("gym_wallpaper")
@@ -49,9 +44,12 @@ struct HomeView: View {
                 guard newOrientation != .faceDown, newOrientation != .faceUp else { return }
                 orientation = newOrientation
             }
-            .navigationDestionationForCoreModule(path: $path)
+            .navigationDestionationForCoreModule(path: $navigation.path)
+            .task {
+                await getNecessaryData()
+            }
         }
-
+        .environmentObject(navigation)
     }
 
     // MARK: - Portrait
@@ -69,93 +67,53 @@ struct HomeView: View {
         }
     }
 
-    private var landscapeMenu: some View {
-        HStack(spacing: Constans.spacing) {
-            ForEach(options) { option in
-//                homeButton(option)
-            }
-        }
-    }
-
-    private var portraitMenu: some View {
-        VStack(spacing: Constans.spacing) {
-            ForEach(options) { option in
-//                homeButton(option)
-            }
-        }
-    }
-
-    // MARK: - LazyVGrid
-
-//    private func grid(containerSize: CGFloat) -> some View {
-//        LazyVGrid(columns: columns, spacing: Constans.spacing) {
-//            ForEach(options) { option in
-//                homeButton(option, containerSize: containerSize)
-//            }
-//        }
-//    }
-
     // MARK: - Buttons
 
     @ViewBuilder
     private func homeButton(_ option: MenuOption, containerSize: CGFloat) -> some View {
-        if let image = option.image {
-            image
-                .resizable()
-                .frame(width: containerSize * 0.45, height: containerSize * 0.45)
-                .matchedGeometryEffect(id: option.imageName, in: namespace)
-                .anyButton(option.style, action: {
-                    switch option {
-                    case .profile:
-                        onProfileButtonPressed()
-                    case .fitnessPlan:
-                        onFitnessPlanButtonPressed()
-                    case .routine:
-                        onRoutinesButtonPressed()
-                    case .settings:
-                        onSettingsButtonPressed()
-                    }
-                })
-                .shadow(color: .white, radius: 2)
-        } else {
-            Image(systemName: option.imageName)
-                .font(.system(size: containerSize * 0.2))
-                .frame(width: containerSize * 0.45, height: containerSize * 0.45)
-                .matchedGeometryEffect(id: option.imageName, in: namespace)
-                .neumorphicStyle()
-                .anyButton(.press, action: {
-                    switch option {
-                    case .profile:
-                        onProfileButtonPressed()
-                    case .fitnessPlan:
-                        onFitnessPlanButtonPressed()
-                    case .routine:
-                        onRoutinesButtonPressed()
-                    case .settings:
-                        onSettingsButtonPressed()
-                    }
-                })
-        }
+        option.image
+            .resizable()
+            .frame(width: containerSize * 0.45, height: containerSize * 0.45)
+            .anyButton(option.style, action: {
+                switch option {
+                case .profile:
+                    onProfileButtonPressed()
+                case .fitnessPlan:
+                    onFitnessPlanButtonPressed()
+                case .routine:
+                    onRoutinesButtonPressed()
+                case .settings:
+                    onSettingsButtonPressed()
+                }
+            })
+            .shadow(color: .white, radius: 2)
     }
 
     // MARK: - Actions
 
     private func onProfileButtonPressed() {
-        path.append(.profile)
+        navigation.path.append(.profile)
     }
 
     private func onFitnessPlanButtonPressed() {
-        path.append(.fitnessPlan)
+        navigation.path.append(.fitnessPlan)
     }
 
     private func onSettingsButtonPressed() {
-        path.append(.settings)
+        navigation.path.append(.settings)
     }
 
     private func onRoutinesButtonPressed() {
-        path.append(.routines)
+        navigation.path.append(.routines)
     }
 
+    private func getNecessaryData() async {
+        async let fetchExercises: [Exercise] = exercisesManager.fetchExercises()
+        async let fetchMuscles: Muscles = musclesManager.fetchMuscles()
+        async let fetchMuscleGroups: MuscleGroups = musclesManager.fetchMuscleGroups()
+
+        let (_, _, _) = await (try? fetchExercises, try? fetchMuscles, try? fetchMuscleGroups)
+    }
 
     // MARK: - Types
 
@@ -163,21 +121,12 @@ struct HomeView: View {
         case routine, fitnessPlan, profile, settings
         var id: String { self.rawValue }
 
-        var imageName: String {
-            switch self {
-            case .routine: "dumbbell"
-            case .fitnessPlan: "calendar"
-            case .profile: "profile"
-            case .settings: "settings"
-            }
-        }
-
-        var image: Image? {
+        var image: Image {
             switch self {
             case .routine: Image("dumbbell")
             case .profile: Image("profile")
             case .settings: Image("settings")
-            default: nil
+            case .fitnessPlan: Image("calendar")
             }
         }
 
@@ -186,7 +135,7 @@ struct HomeView: View {
             case .routine: .rotate
             case .profile: .highlight
             case .settings: .press
-            default: .plain
+            case .fitnessPlan: .press
             }
         }
     }
@@ -200,19 +149,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
-}
-
-extension View {
-    func neumorphicStyle() -> some View {
-        self
-            .background(Color.offWhite)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-            .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-    }
-
-}
-
-extension Color {
-    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+        .previewEnvironment()
 }
